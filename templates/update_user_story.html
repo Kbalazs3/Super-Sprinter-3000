@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Update User Story</title>
+         </head>
+<body>
+    <h1>Update User Story</h1>
+    <br>
+    <br>
+    <h3>Story Tittle: </h3>
+     <form action="/submit-update" method="post">
+         <input id="st" type="text" maxlength="30" size="30" name="st" value="{{ d['title'] }}">
+        <input type="hidden" name="id" id="id" value="{{  d['id'] }}">
+         <br>
+    <h3>User Story:</h3>
+        <textarea name="user_story" id="user_story" rows="4" cols="60">{{d["user_story"]}}</textarea>
+    <br>
+    <h3>Acceptance Criteria:</h3>
+         <textarea name="acceptance_criteria" id="acceptance_criteria" rows="4" cols="60">{{ d['acceptance_criteria'] }}</textarea>
+    <br>
+    <h3>Business Value:</h3>
+         <input value="{{ d['business_value'] }}" name="business_value" id="business_value" type="number" maxlength="10" size="10" min="100" max="1500" placeholder="100 - 1500" step="100" name="estimation">
+
+    <h3>Estimation:</h3>
+         <input value="{{ d['estimation'] }}" name="estimation" id="estimation" type="number" maxlength="10" size="10" min="0.5" max="40" placeholder="0.5 - 40" step="0.5" >
+         <br>
+         <h3>Status: </h3>
+            <select name="status" id="status">
+            <option value="Planning">Planning</option>
+            <option value="To_Do">To Do</option>
+                <option value="In progress">Planning</option>
+                <option value="Reviewed">Planning</option>
+                <option value="Done">Planning</option>
+            </select>
+                <br>
+                 <br>
+                 <br>
+                <input type="submit" value="Update new User Story">
+                <br>
+        </select>
+    </form>
+</body>
+
+</html>

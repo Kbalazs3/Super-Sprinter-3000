@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>{% block page_title %}Add user story{% endblock %} </title>
+    {% endblock %}
+         </head>
+
+<body>
+    {% block body %}
+    <h1>{% block h1 %}Add User Story{% endblock %}</h1>
+    <br>
+    <br>
+    <h3>Story Tittle: </h3>
+     <form action="/submit" method="post">
+         <input type="text" maxlength="30" size="30" name="st" id="st">
+
+         <br>
+    <h3>User Story:</h3>
+        <textarea name="user_story" rows="4" cols="60">{% block user_story %}{% endblock %}</textarea>
+    <br>
+    <h3>Acceptance Criteria:</h3>
+         <textarea name="acceptance_criteria" rows="4" cols="60">{% block acceptance %}{% endblock %}</textarea>
+    <br>
+    <h3>Business Value:</h3>
+         <input {% block business_v %}{% endblock %} name="business_value" type="number" maxlength="10" size="10" min="100" max="1500" placeholder="100 - 1500" step="100" name="estimation">
+
+    <h3>Estimation:</h3>
+         <input {% block estimation %}{% endblock %} name="estimation" type="number" maxlength="10" size="10" min="0.5" max="40" placeholder="0.5 - 40" step="0.5" >
+         <br>
+         <br>
+         <input {% block submit_button %}{% endblock %} type="submit" value="Add new User Story">
+         <br>
+         <br>
+
+    </form>
+ {% endblock %}
+</body>
+
+</html>

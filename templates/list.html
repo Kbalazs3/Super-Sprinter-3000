@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8>">
+        <title>Super Sprinter 3000</title>
+    </head>
+    <body>
+    <h1>Super Sprinter 3000</h1>
+    <br>
+    <br>
+    <h3><a href="/story">Add new user story</a> </h3>
+
+    <br>
+    <br>
+    <table>
+        <tr><th>Id</th>
+        <th>Story Tittle</th>
+        <th>User Story</th>
+        <th>Acceptance Criteria</th>
+        <th>Business Value</th>
+        <th>Estimation</th>
+        <th>Status</th>
+        </tr>
+    {% for d in user_stories %}
+        <tr>
+            <td><a href="/update-story/{{ d["id"] }}"> {{d['id']}}</a></td>
+            <td>{{d['title']}}</td>
+            <td>{{d['user_story']}}</td>
+            <td>{{d['acceptance_criteria']}}</td>
+            <td>{{d['business_value']}}</td>
+            <td>{{d['estimation']}}</td>
+            <td>{{d['status']}}</td>
+        </tr>
+
+
+        {% endfor %}
+    </table>
+    </body>
+
+
+</html>
