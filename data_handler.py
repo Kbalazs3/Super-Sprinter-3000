@@ -6,9 +6,9 @@ DATA_HEADER = ['id', 'title', 'user_story', 'acceptance_criteria', 'business_val
 STATUSES = ['planning', 'todo', 'in progress', 'review', 'done']
 
 
-def get_element_byid(pid):
-    l = get_all_user_story()
-    for i in l:
+def get_element_by_id(pid):
+    all_user_story_list = get_all_user_story()
+    for i in all_user_story_list:
         if i['id'] == str(pid):
             return i
     return {}
@@ -25,7 +25,6 @@ def get_all_user_story():
 
 
 def write_all_user_story(user_story_list):
-    print(user_story_list)
     with open("data.csv", "w", newline="") as story_data:
         fieldnames = ['id', 'title', 'user_story', 'acceptance_criteria', 'business_value', 'estimation', 'status']
         writer = csv.DictWriter(story_data, fieldnames=fieldnames)
@@ -50,7 +49,6 @@ def generate_id():
 
 def update_data(dict):
     data = get_all_user_story()
-    print(dict)
     fh = open("data.csv", "w")
     fh.write("id,title,user_story,acceptance_criteria,business_value,estimation,status\n")
     for i in data:

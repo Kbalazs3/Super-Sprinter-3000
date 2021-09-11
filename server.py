@@ -60,7 +60,7 @@ def submit_update():
 
 @app.route("/update-story/<int:pid>")
 def update_user_story(pid):
-    dicts = data_handler.get_element_byid(pid)
+    dicts = data_handler.get_element_by_id(pid)
     return render_template("update_user_story.html", d=dicts)
 
 
